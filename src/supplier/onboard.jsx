@@ -62,7 +62,7 @@ function App() {
       {/* Header */}
       <header className="flex items-center  border-b bg-black px-4 py-2">
         <div className="flex items-center gap-2 w-full justify-between max-w-[1600px] mx-auto">
-          <div class="flex text-white">
+          <div className="flex text-white">
             <span className="text-sm ">Powered by</span>
             <img
                 src="/tenantLogo.svg"
@@ -71,35 +71,35 @@ function App() {
                 height={24}
                 className="h-6"
               />
-        </div>
-<div className="flex gap-2">
+          </div>
+        <div className="flex gap-2">
           <Button className="bg-white" variant="ghost">Sign Up</Button>
           <Button className="bg-blue-700" variant="default">Login</Button>
         </div>
         </div>
-        
       </header>
 
       <div className="mb-6 flex items-center justify-between bg-white py-5">
-      <div className="flex items-center gap-2 w-full max-w-[1600px] mx-auto justify-between">
-          <div className="flex items-center gap-4">
-              <img
-                    src={tenantLogo}
-                    width={60}
-                    height={60}
-                    className="rounded-md"
-                  />
-            <div>
-              <h1 className="text-xl font-semibold">
-                Product Compliance for MyDeal
-              </h1>
-              <p className="text-sm text-muted-foreground">Supplier A</p>
+        <div className="flex items-center gap-2 w-full max-w-[1600px] mx-auto justify-between">
+            <div className="flex items-center gap-4">
+                <img
+                      src={tenantLogo}
+                      width={60}
+                      height={60}
+                      className="rounded-md"
+                    />
+              <div>
+                <h1 className="text-xl font-semibold">
+                  Product Compliance for MyDeal
+                </h1>
+                <p className="text-sm text-muted-foreground">Supplier A</p>
+              </div>
+            </div>
+            <div className="flex gap-2">
+              <Button variant="outline">Finish later</Button>
+              <Button variant="default">Final Submit</Button>
             </div>
           </div>
-          <div className="flex gap-2">
-            <Button variant="outline">Finish later</Button>
-            <Button variant="default">Final Submit</Button>
-          </div></div>
         </div>
       {/* Main Content */}
       <main className="max-w-[1500px]  mx-auto w-full px-4 py-6">
@@ -186,7 +186,7 @@ function App() {
                               </td>
                               <td className="p-2 text-sm">
                                {plan.standards.join(", ")}
-                                <Button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-md text-sm p-2 leading-none me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 ms-2">+more</Button>
+                                <Button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-md text-sm p-2 leading-none me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 ms-2">+more</Button>
                               </td>
 
                               <td className="p-2 text-sm">
