@@ -8,7 +8,7 @@ import {
     CardHeader,
   } from "@/components/ui/card"
   import { Badge } from "@/components/ui/badge"
-export function TaskCard({ title, status, startDate, endDate, applicableCards, metrics }) {
+export function TaskCard({ title, status, startDate, endDate, applicableCards, metrics , isExpand }) {
   const statusStyles = {
     OVERDUE: "bg-[#FFF0F8] text-[#C11574] hover:bg-[#FFF0F8]",
     PENDING: "bg-[#FFF9EC] hover:bg-[#FFF9EC] text-[#F0AF1D]",
@@ -60,24 +60,70 @@ export function TaskCard({ title, status, startDate, endDate, applicableCards, m
         
 
         {/* Applicable Cards */}
-        <div className="border-[#DADADA] border-t-[1px] pt-[10px] mt-[10px]">
-            <p className="text-[9px] text-[#667085] uppercase mb-[5px]">Applicable cards</p>
-        
-        <div className="flex flex-wrap gap-2">
-            <Badge className="text-xs bg-gray-100 text-gray-700 bg-[#1B1B1B] text-[10px] text-white rounded-[5px] px-[9px] py-[1px]">
-              Packaging
-            </Badge>
-            <Badge className="text-xs bg-gray-100 text-gray-700 bg-[#1B1B1B] text-[10px] text-white rounded-[5px] px-[9px] py-[1px]">
-              Packaging
-            </Badge>
-            <Badge className="text-xs bg-gray-100 text-gray-700 bg-[#1B1B1B] text-[10px] text-white rounded-[5px] px-[9px] py-[1px]">
-              Packaging
-            </Badge>
-            <Badge className="text-xs bg-gray-100 text-gray-700 text-[10px] text-[#667085] px-[5px] py-[1px] rounded-[5px] bg-[#F6F6F6]">
-              2 More
-            </Badge>
-        </div>
-        </div>
+        {(isExpand==false) && (
+          <div className="border-[#DADADA] border-t-[1px] pt-[10px] mt-[10px]">
+              <p className="text-[9px] text-[#667085] uppercase mb-[5px]">Applicable cards</p>
+              <div className="flex flex-wrap gap-2">
+                <Badge className="text-xs bg-gray-100 text-gray-700 bg-[#1B1B1B] text-[10px] text-white rounded-[5px] px-[9px] py-[1px]">
+                  Packaging
+                </Badge>
+                <Badge className="text-xs bg-gray-100 text-gray-700 bg-[#1B1B1B] text-[10px] text-white rounded-[5px] px-[9px] py-[1px]">
+                  Packaging
+                </Badge>
+                <Badge className="text-xs bg-gray-100 text-gray-700 bg-[#1B1B1B] text-[10px] text-white rounded-[5px] px-[9px] py-[1px]">
+                  Packaging
+                </Badge>
+                <Badge className="text-xs bg-gray-100 text-gray-700 text-[10px] text-[#667085] px-[5px] py-[1px] rounded-[5px] bg-[#F6F6F6]">
+                  2 More
+                </Badge>
+              </div>
+            </div>
+          )}
+          {(isExpand==true) && (
+             <div className="border-[#DADADA] border-t-[1px] pt-[10px] mt-[10px]">
+                <div className="flex flex-wrap gap-2">
+                      {/* Materials Section */}
+                  <div className="mb-4">
+                    <div className="flex items-center bg-gray-100 rounded-md p-2 text-sm font-semibold text-gray-700">
+                      
+                      Materials
+                    </div>
+                    <div className="mt-2 grid grid-cols-2 gap-2">
+                      <span>45 Hug * 45 Hug</span>
+                      {/* Repeatable Item */}
+                      {Array.from({ length: 6 }).map((_, i) => (
+                        <div
+                          key={i}
+                          className="bg-gray-50 text-sm text-gray-600 px-3 py-2 rounded-md border border-gray-200 flex justify-center items-center"
+                        >
+                          PP Solid - Green Cap
+                          <span className="ml-2 text-yellow-500">●</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Accessories Section */}
+                  <div>
+                    <div className="flex items-center bg-gray-100 rounded-md p-2 text-sm font-semibold text-gray-700">
+                      Accessories
+                    </div>
+                      <div className="mt-2 grid grid-cols-2 gap-2">
+                        {/* Repeatable Item */}
+                        {Array.from({ length: 6 }).map((_, i) => (
+                          <div
+                            key={i}
+                            className="bg-gray-50 text-sm text-gray-600 px-3 py-2 rounded-md border border-gray-200 flex justify-center items-center"
+                          >
+                            PP Solid - Green Cap
+                            <span className="ml-2 text-yellow-500">●</span>
+                          </div>
+                        ))}
+                      </div>
+                  </div>
+                </div>
+             </div>
+          )}
       </CardContent>
 
     </Card>
@@ -90,6 +136,7 @@ TaskCard.defaultProps = {
   status: "PENDING",
   startDate: "Mar 30",
   endDate: "Apr 13",
+  isExpand: false,
   applicableCards: ["Packaging", "Inspection"],
   metrics: {
     approved: 2,

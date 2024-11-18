@@ -29,15 +29,30 @@ import { TaskCard } from "./components/Task";
     <div className="ps-[86px]">
     <Header />
     <ButtonGroup />
-    <div className="flex">
+    <div className="flex ">
         <Sidebar />
-        <div className="w-full flex gap-x-[50px] overflow-x-auto">
+        <div className="w-full flex gap-x-[50px] overflow-x-auto overflow-y-auto max-h-[calc(100vh-170px)]">
         <div className=" w-[907px] shrink-0">
-        <SamplingSection color="#818094"/>
+        <div className="sticky top-0 z-[10] bg-white" ><SamplingSection color="#818094"/></div>
         {/* <ReviewCard/> */}
         <div className="space-x-4 flex border-t-[1px] border-[#E9E9E9] py-[15px]">
-            <TaskCard status="OVERDUE"/>
+            <TaskCard  status="OVERDUE"/>
             <TaskCard status="DONE"/>
+            <TaskCard />
+        </div>
+        <div className="space-x-4 flex border-t-[1px] border-[#E9E9E9] py-[15px]">
+            <TaskCard isExpand={true}/>
+            <TaskCard isExpand={true}/>
+            <TaskCard isExpand={true}/>
+        </div>
+        <div className="space-x-4 flex border-t-[1px] border-[#E9E9E9] py-[15px]">
+            <TaskCard />
+            <TaskCard />
+            <TaskCard />
+        </div>
+        <div className="space-x-4 flex border-t-[1px] border-[#E9E9E9] py-[15px]">
+            <TaskCard />
+            <TaskCard />
             <TaskCard />
         </div>
         <div className="space-x-4 flex border-t-[1px] border-[#E9E9E9] py-[15px]">
@@ -53,8 +68,23 @@ import { TaskCard } from "./components/Task";
         </div>
 
         <div className="w-[907px] shrink-0">
-        <SamplingSection color="#4F46E5"/>
+        <div className="sticky top-0 z-[10] bg-white" > <SamplingSection color="#4F46E5"/></div>
         {/* <ReviewCard/> */}
+        <div className="space-x-4 flex border-t-[1px] border-[#E9E9E9] py-[15px]">
+            <TaskCard status="DONE"/>
+            <TaskCard />
+            <TaskCard />
+        </div>
+        <div className="space-x-4 flex border-t-[1px] border-[#E9E9E9] py-[15px]">
+            <TaskCard status="DONE" isExpand={true}/>
+            <TaskCard isExpand={true}/>
+            <TaskCard isExpand={true}/>
+        </div>
+        <div className="space-x-4 flex border-t-[1px] border-[#E9E9E9] py-[15px]">
+            <TaskCard status="DONE"/>
+            <TaskCard />
+            <TaskCard />
+        </div>
         <div className="space-x-4 flex border-t-[1px] border-[#E9E9E9] py-[15px]">
             <TaskCard status="DONE"/>
             <TaskCard />

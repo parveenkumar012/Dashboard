@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import productImg from "../assets/product.png";
 import {
@@ -9,7 +9,8 @@ import {
     CardHeader,
     CardTitle,
   } from "@/components/ui/card"
-  import { Button } from "@/components/ui/button"
+
+import { Button } from "@/components/ui/button"
 import { ChevronDown } from "lucide-react"; // Arrow icon from lucide-react
 
 // Sample data for products
@@ -32,13 +33,32 @@ const products = [
     sku: "BBU-WCF-BIB-AOPPNK",
     imageUrl: productImg,
   },
+  {
+    id: 4,
+    name: "Pink Water Color Bibs",
+    sku: "BBU-WCF-BIB-AOPPNK",
+    imageUrl: productImg,
+  },  {
+    id: 5,
+    name: "Pink Water Color Bibs",
+    sku: "BBU-WCF-BIB-AOPPNK",
+    imageUrl: productImg,
+  },  {
+    id: 6,
+    name: "Pink Water Color Bibs",
+    sku: "BBU-WCF-BIB-AOPPNK",
+    imageUrl: productImg,
+  },
 ];
 
 export function Sidebar() {
+
+    const [isProductExpanded, setIsProductExpanded] = useState(false);
+
     return (
-        <div className="ps-[24px] w-[228px] shrink-0 sticky left-0 top-0">
+        <div className="w-[228px] shrink-0 sticky left-0 top-0 max-h-[calc(100vh-170px)] overflow-y-auto">
           {/* Header */}
-          <div className="flex flex-col justify-end items-baseline flex-wrap h-[199px] border-b-[1px] pb-[20px]">
+          <div className="flex flex-col justify-end items-baseline flex-wrap h-[199px] border-b-[1px] pb-[20px] sticky top-0 z-10 bg-white ps-[24px]">
             <h3 className="text-base font-semibold w-full flex items-end gap-x-[5px]">
               Product <span className="text-gray-500 text-[12px]">({products.length} products)</span>
             </h3>
@@ -50,7 +70,7 @@ export function Sidebar() {
           {/* Product List */}
           <div className="">
             {products.map((product) => (
-              <Card key={product.id} className="flex items-center flex-wrap p-4 px-0 relative shadow-none rounded-none border-x-0 border-t-0 h-[162px] border-b-[1px]">
+              <Card key={product.id} className=" pl-24 flex items-center flex-wrap p-4 px-0 relative shadow-none rounded-none border-x-0 border-t-0 h-[162px] border-b-[1px]">
                 {/* Product Image */}
                 <div className="w-full">
                 <img
