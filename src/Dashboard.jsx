@@ -31,7 +31,7 @@ import { TaskCard } from "./components/Task";
     <ButtonGroup />
     <div className="flex ">
         <Sidebar />
-        <div className="w-full flex gap-x-[50px] overflow-x-auto overflow-y-auto max-h-[calc(100vh-170px)]">
+        <div className="w-full flex gap-x-[50px] overflow-x-auto overflow-y-auto max-h-[calc(100vh-170px)] pl-5">
         <div className=" w-[907px] shrink-0">
         <div className="sticky top-0 z-[10] bg-white" ><SamplingSection color="#818094"/></div>
         {/* <ReviewCard/> */}

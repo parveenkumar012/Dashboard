@@ -1,5 +1,6 @@
 import React from 'react';
 import { Plus, LayoutList, LayoutGrid, Save, TrainTrack  } from 'lucide-react';
+import listIcon from '../assets/list-icon.svg';
 
 const ButtonGroup = () => {
     return (
@@ -11,11 +12,11 @@ const ButtonGroup = () => {
             </button>
             <div className='flex gap-x-[10px]'>
             {/* View Mode Toggle Buttons */}
-            <div className="flex items-center space-x-1 border border-gray-300 rounded-md p-1">
-                <button className="p-1 rounded hover:bg-gray-200">
-                    <LayoutList className="text-blue-500" size={16} /> {/* Active icon styled in blue */}
+            <div className="flex items-center space-x-1 ">
+                <button className="p-0 border border-[#DADADA] rounded-[5.97px] hover:border-[#4F46E5]  size-9 inline-flex justify-center items-center">
+                   <img src={listIcon} alt="list icon" />
                 </button>
-                <button className="p-1 rounded hover:bg-gray-200">
+                <button className="p-0 border border-[#DADADA] rounded-[5.97px] hover:border-[#4F46E5] size-9 inline-flex justify-center items-center">
                     <LayoutGrid className="text-gray-500" size={16} />
                 </button>
             </div>
